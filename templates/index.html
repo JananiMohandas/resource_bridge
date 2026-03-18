@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Resource Bridge - Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>📚 The Resource Bridge</h1>
+            <p>Your Smart Digital Library for Course Resources</p>
+            
+            <div class="role-cards">
+                <a href="/teacher" class="role-card">
+                    <div class="role-icon">👨‍🏫</div>
+                    <h2>Teacher</h2>
+                    <p>Upload and organize course resources</p>
+                </a>
+                
+                <a href="/student" class="role-card">
+                    <div class="role-icon">👨‍🎓</div>
+                    <h2>Student</h2>
+                    <p>Search, download, and request resources</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

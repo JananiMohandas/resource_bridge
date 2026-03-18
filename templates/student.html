@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - The Resource Bridge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <div class="logo-icon">RB</div>
+                <h1>The Resource Bridge</h1>
+            </a>
+            <div class="role-badge">👨‍🎓 Student</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Alert Messages -->
+        <div id="alertContainer"></div>
+
+        <!-- Search & Filter Section -->
+        <div class="card">
+            <h2>🔍 Search Resources</h2>
+            <div class="search-section">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search by title or description...">
+                    <button class="btn btn-primary" id="searchBtn">Search</button>
+                    <button class="btn btn-outline" id="clearBtn">Clear</button>
+                </div>
+                
+                <div id="filterTagsContainer" class="filter-tags hidden">
+                    <strong>Filter by tags:</strong>
+                    <div id="filterTags"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resources Section -->
+        <div class="card">
+            <h2>📚 Available Resources</h2>
+            <div id="loadingResources" class="loading">
+                <div class="spinner"></div>
+                <p>Loading resources...</p>
+            </div>
+            <div id="resourcesContainer" class="hidden"></div>
+        </div>
+
+        <!-- Request Resource Section -->
+        <div class="card">
+            <h2>📝 Request a Resource</h2>
+            <p style="color: var(--gray); margin-bottom: 20px;">
+                Can't find what you're looking for? Request it here and vote for others' requests!
+            </p>
+            
+            <form id="requestForm" style="margin-bottom: 30px;">
+                <div class="form-group">
+                    <label for="topic">Resource Topic *</label>
+                    <input type="text" id="topic" name="topic" required 
+                           placeholder="e.g., Week 5 Study Guide">
+                </div>
+
+                <div class="form-group">
+                    <label for="student_name">Your Name (optional)</label>
+                    <input type="text" id="student_name" name="student_name" 
+                           placeholder="Your name">
+                </div>
+
+                <button type="submit" class="btn btn-secondary">
+                    Submit Request
+                </button>
+            </form>
+
+            <h3>📊 Top Requests (Most Voted)</h3>
+            <div id="loadingRequests" class="loading">
+                <div class="spinner"></div>
+                <p>Loading requests...</p>
+            </div>
+            <div id="requestsContainer" class="hidden"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/student.js') }}"></script>
+</body>
+</html>
